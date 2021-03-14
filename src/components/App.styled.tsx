@@ -6,4 +6,6 @@ export const App = styled.div`
     text-align: center;
     height: 100vh;
     width: 100vw;
+    font-family: 'Lora', serif;
+    text-transform: uppercase;
 `;
