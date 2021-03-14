@@ -1,16 +1,20 @@
 import { useState } from 'react';
 
-import Loading from '../components/loading/loading';
+import * as types from 'styled-components/cssprop';
 import * as S from './App.styled';
 
-const App: React.FC = () => {
-	const [loading, setLoading] = useState(true)
+// import Loading from '../components/Loading/Loading';
+import RainCloud from '../components/RainCloud/RainCloud';
 
-	return (
-		<S.App>
-			{ loading ? <Loading /> : <div></div> }
-		</S.App>
-	)
-}
+const App: React.FC = () => {
+    const [loading, setLoading] = useState(true);
+
+    return (
+        <S.App>
+            {/* { loading ? <Loading /> : <div></div> } */}
+            <RainCloud />
+        </S.App>
+    );
+};
 
 export default App;
