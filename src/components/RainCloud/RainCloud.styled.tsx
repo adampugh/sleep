@@ -1,16 +1,11 @@
 import styled from 'styled-components';
 
 export const RainCloud = styled.div`
-    #181c1d: #181c1d;
-    rgba(255, 255, 255, 0.2): rgba(255, 255, 255, 0.2);
-    rgba(255, 255, 255, 0.2)er: rgba(255, 1255, 255, 0.1);
-    white: white;
-
     .icon {
         position: relative;
         display: inline-block;
         background-color: #181c1d;
-        margin: 5%;
+        margin: 60px;
         width: 2em;
         height: 2em;
         font-size: 0.5em;
