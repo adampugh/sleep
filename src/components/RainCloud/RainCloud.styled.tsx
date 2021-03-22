@@ -5,7 +5,7 @@ export const RainCloud = styled.div`
         position: relative;
         display: inline-block;
         background-color: #181c1d;
-        margin: 60px;
+        margin: 43px;
         width: 2em;
         height: 2em;
         font-size: 0.5em;

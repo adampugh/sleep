@@ -11,5 +11,6 @@ export const TopBanner = styled.div`
 
     .top-banner__logo__img {
         overflow: hidden;
+        max-width: 100%;
     }
 `;
