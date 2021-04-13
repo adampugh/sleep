@@ -1,5 +1,7 @@
 import * as S from './RainCloud.styled';
 
+// split into separate cloud components
+
 const RainCloud: React.FC = () => {
     return (
         <S.RainCloud>
@@ -7,7 +9,6 @@ const RainCloud: React.FC = () => {
                 <div className="cloud2"></div>
                 <div className="rain"></div>
             </div>
-
             <div className="icon">
                 <div className="cloud2"></div>
                 <div className="thunder">
@@ -15,7 +16,6 @@ const RainCloud: React.FC = () => {
                     <div className="bolt"></div>
                 </div>
             </div>
-
             <div className="icon">
                 <div className="rays">
                     <div className="ray"></div>
