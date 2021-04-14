@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
+// eslint-disable-next-line
 import * as types from 'styled-components/cssprop';
 import * as S from './App.styled';
 
@@ -23,8 +24,12 @@ const clouds: Cloud[] = [
 ];
 
 const App: React.FC = () => {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [audio, setAudio] = useState('');
+
+    useEffect(() => {
+        setLoading(false);
+    }, []);
 
     return (
         <S.App>

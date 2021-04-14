@@ -1,10 +1,14 @@
 import * as S from './AudioPlayer.styled';
 
-const AudioPlayer: React.FC = () => {
+interface AudioPlayerProps {
+    audio: string;
+}
+
+const AudioPlayer: React.FC<AudioPlayerProps> = ({ audio }) => {
     return (
         <S.AudioPlayerStyled
             autoPlay={false}
-            src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+            src={audio}
             showSkipControls={true}
             showJumpControls={false}
             // onEnded={updateEpisode}

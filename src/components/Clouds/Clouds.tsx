@@ -2,7 +2,7 @@ import { Cloud } from '../../types';
 
 interface CloudProps {
     clouds: Cloud[];
-    setAudio: any;
+    setAudio: (audio: string) => void;
 }
 
 const Clouds: React.FC<CloudProps> = ({ clouds, setAudio }) => {
