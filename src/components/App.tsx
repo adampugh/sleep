@@ -31,6 +31,11 @@ const App: React.FC = () => {
         setLoading(false);
     }, []);
 
+    const getAudioFiles = () => {
+        // map over clouds arr
+        // fetch files and set as audio prop in state
+    };
+
     return (
         <S.App>
             {loading ? (
