@@ -7,7 +7,7 @@ export const AudioPlayerStyled = styled(AudioPlayer)`
     bottom: 10px;
     width: 100%;
     background: #181c1d;
-    padding-left: 38px;
+    // padding-left: 38px;
 
     .rhap_main.rhap_stacked {
         width: 600px;
@@ -30,5 +30,9 @@ export const AudioPlayerStyled = styled(AudioPlayer)`
 
     .rhap_volume-controls {
         display: none;
+    }
+
+    .rhap_container {
+        // padding-left: 15px !important;
     }
 `;

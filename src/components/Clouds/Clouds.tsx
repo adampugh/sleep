@@ -9,7 +9,9 @@ const Clouds: React.FC<CloudProps> = ({ clouds, setAudio }) => {
     return (
         <div>
             {clouds.map(({ component, audio }) => (
-                <div onClick={() => setAudio(audio)}>{component}</div>
+                <div className="icon" onClick={() => setAudio(audio)}>
+                    {component}
+                </div>
             ))}
         </div>
     );

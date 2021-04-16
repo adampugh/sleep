@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 // eslint-disable-next-line
 import * as types from 'styled-components/cssprop';
 import * as S from './App.styled';
 
-import { Cloud } from '../types';
+import { Cloud, FetchedCloudData } from '../types';
 
 import Loading from '../components/Loading/Loading';
 import TopBanner from '../components/TopBanner/TopBanner';
@@ -12,13 +13,20 @@ import RainCloud from '../components/RainCloud/RainCloud';
 import AudioPlayer from '../components/AudioPlayer/AudioPlayer';
 import Clouds from '../components/Clouds/Clouds';
 
-const clouds: Cloud[] = [
+const initialCloudState: Cloud[] = [
     {
-        audio: '123123',
+        id: 'rain',
+        audio: '',
         component: RainCloud,
     },
     {
-        audio: '123123',
+        id: 'thunder',
+        audio: '',
+        component: RainCloud,
+    },
+    {
+        id: 'beach',
+        audio: '',
         component: RainCloud,
     },
 ];
@@ -26,14 +34,23 @@ const clouds: Cloud[] = [
 const App: React.FC = () => {
     const [loading, setLoading] = useState(true);
     const [audio, setAudio] = useState('');
+    const [clouds, setClouds] = useState(initialCloudState);
 
     useEffect(() => {
+        getAudioFiles();
         setLoading(false);
     }, []);
 
-    const getAudioFiles = () => {
-        // map over clouds arr
-        // fetch files and set as audio prop in state
+    const getAudioFiles = async () => {
+        const updatedCloudsObject = await Promise.all(
+            clouds.map(async (cloud) => {
+                const {
+                    data: { audio },
+                } = await axios.get<FetchedCloudData>('');
+                return { ...cloud, audio };
+            })
+        );
+        setClouds(updatedCloudsObject);
     };
 
     return (
