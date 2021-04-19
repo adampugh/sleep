@@ -1,3 +1,8 @@
+import RainCloud from '../RainCloud/RainCloud';
+import ThunderCloud from '../ThunderCloud/ThunderCloud';
+import ClearCloud from '../ClearCloud/ClearCloud';
+
+import * as S from './Clouds.styled';
 import { Cloud } from '../../types';
 
 interface CloudProps {
@@ -7,13 +12,13 @@ interface CloudProps {
 
 const Clouds: React.FC<CloudProps> = ({ clouds, setAudio }) => {
     return (
-        <div>
-            {clouds.map(({ component, audio }) => (
-                <div className="icon" onClick={() => setAudio(audio)}>
-                    {component}
+        <S.Clouds>
+            {clouds.map(({ id, audio }) => (
+                <div key={id} className="icon" onClick={() => setAudio(audio)}>
+                    {id === 'rain' ? <RainCloud /> : id === 'thunder' ? <ThunderCloud /> : <ClearCloud />}
                 </div>
             ))}
-        </div>
+        </S.Clouds>
     );
 };
 

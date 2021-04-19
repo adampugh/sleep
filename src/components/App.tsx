@@ -9,7 +9,6 @@ import { Cloud, FetchedCloudData } from '../types';
 
 import Loading from '../components/Loading/Loading';
 import TopBanner from '../components/TopBanner/TopBanner';
-import RainCloud from '../components/RainCloud/RainCloud';
 import AudioPlayer from '../components/AudioPlayer/AudioPlayer';
 import Clouds from '../components/Clouds/Clouds';
 
@@ -17,17 +16,14 @@ const initialCloudState: Cloud[] = [
     {
         id: 'rain',
         audio: '',
-        component: RainCloud,
     },
     {
         id: 'thunder',
         audio: '',
-        component: RainCloud,
     },
     {
         id: 'beach',
         audio: '',
-        component: RainCloud,
     },
 ];
 
@@ -61,7 +57,6 @@ const App: React.FC = () => {
                 <>
                     <TopBanner />
                     <Clouds clouds={clouds} setAudio={setAudio} />
-                    <RainCloud />
                     <AudioPlayer audio={audio} />
                 </>
             )}

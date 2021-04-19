@@ -7,7 +7,6 @@ const TopBanner: React.FC = () => (
         <div className="top-banner__logo">
             <img className="top-banner__logo__img" src={SleepIcon} alt="sleep brand" />
         </div>
-        {/* <div className="top-banner__faq">FAQ</div> */}
     </S.TopBanner>
 );
 
