@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import firebase from '../firebase';
+// allows storage to be accessed via firebase.storage
+import 'firebase/storage';
 
 // eslint-disable-next-line
 import * as types from 'styled-components/cssprop';
 import * as S from './App.styled';
 
-import { Cloud, FetchedCloudData } from '../types';
+import { Cloud } from '../types';
 
 import Loading from '../components/Loading/Loading';
 import TopBanner from '../components/TopBanner/TopBanner';
@@ -33,21 +35,19 @@ const App: React.FC = () => {
     const [clouds, setClouds] = useState(initialCloudState);
 
     useEffect(() => {
+        const getAudioFiles = async () => {
+            const updatedCloudsObject = await Promise.all(
+                clouds.map(async ({ id }) => {
+                    const storage = firebase.storage();
+                    const pathReference = storage.ref(`${id}.mp3`);
+                    return await pathReference.getDownloadURL().then((url) => ({ id, audio: url }));
+                })
+            );
+            setClouds(updatedCloudsObject);
+        };
         getAudioFiles();
         setLoading(false);
-    }, []);
-
-    const getAudioFiles = async () => {
-        const updatedCloudsObject = await Promise.all(
-            clouds.map(async (cloud) => {
-                const {
-                    data: { audio },
-                } = await axios.get<FetchedCloudData>('');
-                return { ...cloud, audio };
-            })
-        );
-        setClouds(updatedCloudsObject);
-    };
+    }, [clouds]);
 
     return (
         <S.App>

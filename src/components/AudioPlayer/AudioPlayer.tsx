@@ -4,18 +4,8 @@ interface AudioPlayerProps {
     audio: string;
 }
 
-const AudioPlayer: React.FC<AudioPlayerProps> = ({ audio }) => {
-    return (
-        <S.AudioPlayerStyled
-            autoPlay={false}
-            src={audio}
-            showSkipControls={true}
-            showJumpControls={false}
-            // onEnded={updateEpisode}
-            // onClickNext={updateEpisode}
-            // onClickPrevious={updateEpisode}
-        />
-    );
-};
+const AudioPlayer: React.FC<AudioPlayerProps> = ({ audio }) => (
+    <S.AudioPlayerStyled autoPlay={true} src={audio} showSkipControls={true} showJumpControls={false} />
+);
 
 export default AudioPlayer;
