@@ -33,6 +33,8 @@ const App: React.FC = () => {
     const [loading, setLoading] = useState(true);
     const [audio, setAudio] = useState('');
     const [clouds, setClouds] = useState(initialCloudState);
+    // might make more sense to use a string/null - if string fade out and show relevant cloud animation?
+    const [active, setActive] = useState(false);
 
     useEffect(() => {
         const getAudioFiles = async () => {
