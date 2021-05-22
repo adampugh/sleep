@@ -9,6 +9,10 @@ export const Clouds = styled.div`
         width: 2em;
         height: 2em;
         font-size: 0.5em;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     .cloud2 {

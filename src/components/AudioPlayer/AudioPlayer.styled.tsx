@@ -7,7 +7,6 @@ export const AudioPlayerStyled = styled(AudioPlayer)`
     bottom: 10px;
     width: 100%;
     background: #181c1d;
-    // padding-left: 38px;
 
     .rhap_main.rhap_stacked {
         width: 600px;
