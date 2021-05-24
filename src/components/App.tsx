@@ -56,7 +56,7 @@ const App: React.FC = () => {
         setInactive(false);
         clearTimeout(timeout);
         // set fade in and out
-        timeout = setTimeout(() => setInactive(true), 6000);
+        timeout = setTimeout(() => setInactive(true), 60000);
     };
 
     return (
