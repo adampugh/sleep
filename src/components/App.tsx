@@ -9,11 +9,12 @@ import * as S from './App.styled';
 
 import { Cloud } from '../types';
 
-// import Loading from '../components/Loading/Loading';
+import Loading from '../components/Loading/Loading';
 import TopBanner from '../components/TopBanner/TopBanner';
 import AudioPlayer from '../components/AudioPlayer/AudioPlayer';
 import Clouds from '../components/Clouds/Clouds';
 import Overlay from '../components/Overlay/Overlay';
+import { Loading } from './Loading/Loading.styled';
 
 const initialCloudState: Cloud[] = [
     {
@@ -62,7 +63,7 @@ const App: React.FC = () => {
     return (
         <S.App onMouseMove={handleMouseMove}>
             {loading ? (
-                <h1>...loading</h1>
+                <Loading />
             ) : (
                 <>
                     <TopBanner />
