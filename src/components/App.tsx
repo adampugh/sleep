@@ -9,7 +9,7 @@ import * as S from './App.styled';
 
 import { Cloud } from '../types';
 
-import Loading from '../components/Loading/Loading.tsx';
+// import Loading from '../components/Loading/Loading';
 import TopBanner from '../components/TopBanner/TopBanner';
 import AudioPlayer from '../components/AudioPlayer/AudioPlayer';
 import Clouds from '../components/Clouds/Clouds';
@@ -62,7 +62,8 @@ const App: React.FC = () => {
     return (
         <S.App onMouseMove={handleMouseMove}>
             {loading ? (
-                <Loading />
+                // <Loading />
+                <h1>...loading</h1>
             ) : (
                 <>
                     <TopBanner />
