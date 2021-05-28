@@ -62,7 +62,6 @@ const App: React.FC = () => {
     return (
         <S.App onMouseMove={handleMouseMove}>
             {loading ? (
-                // <Loading />
                 <h1>...loading</h1>
             ) : (
                 <>
