@@ -14,7 +14,6 @@ import TopBanner from '../components/TopBanner/TopBanner';
 import AudioPlayer from '../components/AudioPlayer/AudioPlayer';
 import Clouds from '../components/Clouds/Clouds';
 import Overlay from '../components/Overlay/Overlay';
-import { Loading } from './Loading/Loading.styled';
 
 const initialCloudState: Cloud[] = [
     {
